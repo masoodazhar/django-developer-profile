@@ -80,16 +80,22 @@ class Experience(models.Model):
     
     def __str__(self) -> str:
         return self.heading
-    
-class Skill(models.Model):
+
+class SkillCategory(models.Model):
     heading = models.CharField(max_length=50)
-    skill_time = models.TextField()
+
+    def __str__(self) -> str:
+        return self.heading
+
+   
+class Skill(models.Model):
+    category = models.ForeignKey(SkillCategory, on_delete=models.CASCADE, verbose_name='category', related_name='category')
+    heading = models.CharField(max_length=50)
+    skill_time = models.IntegerField()
 
     def __str__(self) -> str:
         return self.heading
     
-    def get_skills(self):
-        return str(self.skill_time).split('>')
 
 class Resume(models.Model):
     resume = models.FileField(upload_to='files')

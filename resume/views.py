@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Home, WhatIDo, AboutMe, Testimonial, Client, FunFact, Education, Experience, Skill, Resume, Blog, Contact, socialLink
+from .models import Home, WhatIDo, AboutMe, Testimonial, Client, FunFact, Education, Experience, Skill, SkillCategory, Resume, PortFolio, Blog, Contact, socialLink
 # Create your views here.
 def index(request):
     home = Home.objects.last()
@@ -10,8 +10,10 @@ def index(request):
     funFact = FunFact.objects.all()
     education = Education.objects.all()
     experience = Experience.objects.all()
+    skillCategory = SkillCategory.objects.all()
     skill = Skill.objects.all()
     resume = Resume.objects.last()
+    portFolio = PortFolio.objects.all()
     blog = Blog.objects.all()
     contact = Contact.objects.last()
     sociallink = socialLink.objects.all()
@@ -25,8 +27,10 @@ def index(request):
         'funFact': funFact,
         'education': education,
         'experience': experience,
+        'skillCategory': skillCategory,
         'skill': skill,
         'resume': resume,
+        'portFolio': portFolio,
         'blog': blog,
         'contact': contact,
         'sociallink': sociallink
