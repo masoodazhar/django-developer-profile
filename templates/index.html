@@ -313,95 +313,33 @@
                                     <div class="col-xs-12 col-sm-12">
                                         <div class="portfolio-content">
                                             <ul class="portfolio-filters">
-                                                <li class="active"> <a class="filter btn btn-sm btn-link"
-                                                        data-group="category_all">All</a> </li>
-                                                <li> <a class="filter btn btn-sm btn-link"
-                                                        data-group="category_media">Media</a> </li>
-                                                <li> <a class="filter btn btn-sm btn-link"
-                                                        data-group="category_mockups">Mockups</a> </li>
-                                                <li> <a class="filter btn btn-sm btn-link"
-                                                        data-group="category_soundcloud">SoundCloud</a> </li>
-                                                <li> <a class="filter btn btn-sm btn-link"
-                                                        data-group="category_vimeo-videos">Vimeo Videos</a> </li>
-                                                <li> <a class="filter btn btn-sm btn-link"
-                                                        data-group="category_youtube-videos">YouTube Videos</a> </li>
+                                                <li class="active"> 
+                                                    <a class="filter btn btn-sm btn-link"  data-group="category_all">All</a> 
+                                                </li>
+
+                                                {% for folio in portFolioTab %}
+                                                    <li class="active"> 
+                                                        <a class="filter btn btn-sm btn-link"  data-group="{{folio.get_link_identifier}}">{{folio.heading}}</a> 
+                                                    </li>
+                                                {% endfor %}
+                                                
+                                                
+                                                        
                                             </ul>
                                             <div class="portfolio-grid four-columns">
-                                                <figure class="item lbaudio"
-                                                    data-groups='["category_all", "category_soundcloud"]'>
-                                                    <div class="portfolio-item-img"> <img src="images/portfolio/1.jpg"
-                                                            alt="SoundCloud Audio" title="" /> <a
-                                                            href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221650664&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
-                                                            class="lightbox mfp-iframe" title="SoundCloud Audio"></a>
-                                                    </div><i class="fa fa-volume-up"></i>
-                                                    <h4 class="name">SoundCloud Audio</h4> <span
-                                                        class="category">SoundCloud</span>
-                                                </figure>
-                                                <figure class="item standard"
-                                                    data-groups='["category_all", "category_media"]'>
-                                                    <div class="portfolio-item-img"> <img src="images/portfolio/2.jpg"
-                                                            alt="Media Project 2" title="" /> <a href="portfolio-1.html"
-                                                            class="ajax-page-load"></a> </div><i
-                                                        class="far fa-file-alt"></i>
-                                                    <h4 class="name">Media Project 2</h4> <span
-                                                        class="category">Media</span>
-                                                </figure>
-                                                <figure class="item lbvideo"
-                                                    data-groups='["category_all", "category_vimeo-videos"]'>
-                                                    <div class="portfolio-item-img"> <img src="images/portfolio/3.jpg"
-                                                            alt="Vimeo Video 1" title="" /> <a
-                                                            href="https://player.vimeo.com/video/158284739"
-                                                            class="lightbox mfp-iframe" title="Vimeo Video 1"></a>
-                                                    </div><i class="fas fa-video"></i>
-                                                    <h4 class="name">Vimeo Video 1</h4> <span class="category">Vimeo
-                                                        Videos</span>
-                                                </figure>
-                                                <figure class="item standard"
-                                                    data-groups='["category_all", "category_media"]'>
-                                                    <div class="portfolio-item-img"> <img src="images/portfolio/4.jpg"
-                                                            alt="Media Project 1" title="" /> <a href="portfolio-1.html"
-                                                            class="ajax-page-load"></a> </div><i
-                                                        class="far fa-file-alt"></i>
-                                                    <h4 class="name">Media Project 1</h4> <span
-                                                        class="category">Media</span>
-                                                </figure>
-                                                <figure class="item lbimage"
-                                                    data-groups='["category_all", "category_mockups"]'>
-                                                    <div class="portfolio-item-img"> <img src="images/portfolio/5.jpg"
-                                                            alt="Mockup Design 1" title="" /> <a class="lightbox"
-                                                            title="Mockup Design 1" href="images/portfolio/5.jpg"></a>
-                                                    </div><i class="far fa-image"></i>
-                                                    <h4 class="name">Mockup Design 1</h4> <span
-                                                        class="category">Mockups</span>
-                                                </figure>
-                                                <figure class="item lbvideo"
-                                                    data-groups='["category_all", "category_youtube-videos"]'>
-                                                    <div class="portfolio-item-img"> <img src="images/portfolio/6.jpg"
-                                                            alt="YouTube Video 1" title="" /> <a
-                                                            href="https://www.youtube.com/embed/bg0gv2YpIok"
-                                                            class="lightbox mfp-iframe" title="YouTube Video 1"></a>
-                                                    </div><i class="fas fa-video"></i>
-                                                    <h4 class="name">YouTube Video 1</h4> <span class="category">YouTube
-                                                        Videos</span>
-                                                </figure>
-                                                <figure class="item standard"
-                                                    data-groups='["category_all", "category_media"]'>
-                                                    <div class="portfolio-item-img"> <img src="images/portfolio/5.jpg"
-                                                            alt="Media Project 1" title="" /> <a href="portfolio-1.html"
-                                                            class="ajax-page-load"></a> </div><i
-                                                        class="far fa-file-alt"></i>
-                                                    <h4 class="name">Media Project 3</h4> <span
-                                                        class="category">Media</span>
-                                                </figure>
-                                                <figure class="item lbimage"
-                                                    data-groups='["category_all", "category_mockups"]'>
-                                                    <div class="portfolio-item-img"> <img src="images/portfolio/6.jpg"
-                                                            alt="Mockup Design 1" title="" /> <a class="lightbox"
-                                                            title="Mockup Design 1" href="images/portfolio/6.jpg"></a>
-                                                    </div><i class="far fa-image"></i>
-                                                    <h4 class="name">Mockup Design 2</h4> <span
-                                                        class="category">Mockups</span>
-                                                </figure>
+                                                {% for port in portFolio %}
+                                                    <figure class="item lbaudio"
+                                                        data-groups='["category_all", "{{port.tab.get_link_identifier}}"]'>
+                                                        <div class="portfolio-item-img"> <img src="{{port.image.url}}"
+                                                                alt="{{port.tab}}" title="" /> <a
+                                                                href="{{port.link}}"
+                                                                class="lightbox mfp-iframe" title="{{port.name}}"></a>
+                                                        </div><i class="{{port.icon}}"></i>
+                                                        <h4 class="name">{{port.name}}</h4> <span
+                                                            class="category">{{port.tab.heading}}</span>
+                                                    </figure>
+                                               {% endfor %}
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -419,13 +357,14 @@
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12">
                                         <div class="blog-masonry two-columns clearfix">
+                                            {% for blg in blog %}
                                             <div class="item post-1">
                                                 <div class="blog-card">
                                                     <div class="media-block">
                                                         <div class="category"> <a href="#"
-                                                                title="View all posts in UI">UI</a> </div><a
-                                                            href="blog-post-1.html"> <img
-                                                                src="images/blog/blog_post_6.jpg"
+                                                                title="View all posts in UI">{{blg.heading}}</a> </div><a
+                                                            href=""> <img
+                                                                src="{{blg.image.url}}"
                                                                 class="size-blog-masonry-image-two-c"
                                                                 alt="Best Practices for Animated Progress Indicators"
                                                                 title="" />
@@ -433,121 +372,15 @@
                                                         </a>
                                                     </div>
                                                     <div class="post-info">
-                                                        <div class="post-date">06 Apr 2018</div><a
-                                                            href="blog-post-1.html">
-                                                            <h4 class="blog-item-title">Best Practices for Animated
-                                                                Progress Indicators</h4>
+                                                        <div class="post-date">{{blg.date|date}}</div><a
+                                                            href="">
+                                                            <h4 class="blog-item-title">{{blg.title}}</h4>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item post-2">
-                                                <div class="blog-card">
-                                                    <div class="media-block">
-                                                        <div class="category"> <a href="#"
-                                                                title="View all posts in E-Commerce">E-Commerce</a>
-                                                        </div><a href="blog-post-1.html"> <img
-                                                                src="images/blog/blog_post_5.jpg"
-                                                                class="size-blog-masonry-image-two-c "
-                                                                alt="Designing the Perfect Feature Comparison Table"
-                                                                title="" />
-                                                            <div class="mask"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="post-info">
-                                                        <div class="post-date">06 Apr 2018</div><a
-                                                            href="blog-post-1.html">
-                                                            <h4 class="blog-item-title">Designing the Perfect Feature
-                                                                Comparison Table</h4>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item post-3">
-                                                <div class="blog-card">
-                                                    <div class="media-block">
-                                                        <div class="category"> <a href="#"
-                                                                title="View all posts in E-Commerce">E-Commerce</a>
-                                                        </div><a href="blog-post-1.html"> <img
-                                                                src="images/blog/blog_post_4.jpg"
-                                                                class="size-blog-masonry-image-two-c"
-                                                                alt="An Overview of E-Commerce Platforms" title="" />
-                                                            <div class="mask"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="post-info">
-                                                        <div class="post-date">06 Apr 2018</div><a
-                                                            href="blog-post-1.html">
-                                                            <h4 class="blog-item-title">An Overview of E-Commerce
-                                                                Platforms</h4>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item post-4">
-                                                <div class="blog-card">
-                                                    <div class="media-block">
-                                                        <div class="category"> <a href="#"
-                                                                title="View all posts in Design">Design</a> </div><a
-                                                            href="blog-post-1.html"> <img
-                                                                src="images/blog/blog_post_3.jpg"
-                                                                class="size-blog-masonry-image-two-c"
-                                                                alt="Why I Switched to Sketch For UI Design" title="" />
-                                                            <div class="mask"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="post-info">
-                                                        <div class="post-date">06 Apr 2018</div><a
-                                                            href="blog-post-1.html">
-                                                            <h4 class="blog-item-title">Why I Switched to Sketch For UI
-                                                                Design</h4>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item post-5">
-                                                <div class="blog-card">
-                                                    <div class="media-block">
-                                                        <div class="category"> <a href="#"
-                                                                title="View all posts in UI">UI</a> </div><a
-                                                            href="blog-post-1.html"> <img
-                                                                src="images/blog/blog_post_2.jpg"
-                                                                class="size-blog-masonry-image-two-c"
-                                                                alt="Creative and Innovative Navigation Designs"
-                                                                title="" />
-                                                            <div class="mask"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="post-info">
-                                                        <div class="post-date">06 Apr 2018</div><a
-                                                            href="blog-post-1.html">
-                                                            <h4 class="blog-item-title">Creative and Innovative
-                                                                Navigation Designs</h4>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item post-6">
-                                                <div class="blog-card">
-                                                    <div class="media-block">
-                                                        <div class="category"> <a href="#"
-                                                                title="View all posts in Design">Design</a> </div><a
-                                                            href="blog-post-1.html"> <img
-                                                                src="images/blog/blog_post_1.jpg"
-                                                                class="size-blog-masonry-image-two-c"
-                                                                alt="6 Easy Steps to Better Icon Design" title="" />
-                                                            <div class="mask"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="post-info">
-                                                        <div class="post-date">06 Apr 2018</div><a
-                                                            href="blog-post-1.html">
-                                                            <h4 class="blog-item-title">6 Easy Steps to Better Icon
-                                                                Design</h4>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            {% endfor %}
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -561,17 +394,17 @@
                                 <h5 class="section-description">Get in Touch</h5>
                             </div>
                             <div class="section-content">
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-xs-12 col-sm-12">
                                         <div id="map" class="map"></div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-3">
                                         <div class="col-inner bs-30">
                                             <div class="lm-info-block gray-default"> <i
                                                     class="lnr lnr-phone-handset"></i>
-                                                <h4>415-832-2000</h4> <span class="lm-info-block-value"></span> <span
+                                                <h4>{{contact.phone}}</h4> <span class="lm-info-block-value"></span> <span
                                                     class="lm-info-block-text"></span>
                                             </div>
                                         </div>
@@ -579,7 +412,7 @@
                                     <div class="col-xs-12 col-sm-3">
                                         <div class="col-inner bs-30">
                                             <div class="lm-info-block gray-default"> <i class="lnr lnr-map-marker"></i>
-                                                <h4>San Francisco</h4> <span class="lm-info-block-value"></span> <span
+                                                <h4>{{contact.address}}</h4> <span class="lm-info-block-value"></span> <span
                                                     class="lm-info-block-text"></span>
                                             </div>
                                         </div>
@@ -589,7 +422,7 @@
                                             <div class="lm-info-block gray-default"> <i class="lnr lnr-envelope"></i>
                                                 <h4><a href="https://lmpixels.com/cdn-cgi/l/email-protection"
                                                         class="__cf_email__"
-                                                        data-cfemail="4f2e232a370f2a372e223f232a612c2022">[email&#160;protected]</a>
+                                                        data-cfemail="4f2e232a370f2a372e223f232a612c2022">{{contact.email}}</a>
                                                 </h4> <span class="lm-info-block-value"></span> <span
                                                     class="lm-info-block-text"></span>
                                             </div>
@@ -597,8 +430,12 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-3">
                                         <div class="col-inner bs-30">
-                                            <div class="lm-info-block gray-default"> <i
-                                                    class="lnr lnr-checkmark-circle"></i>
+                                            <div class="lm-info-block gray-default"> 
+                                                {% if contact.freelance_avalaible %}
+                                                    <i class="lnr lnr-checkmark-circle"></i>
+                                                {% else %}
+                                                    <i class="lnr lnr-cross-circle"></i>
+                                                {% endif %}
                                                 <h4>Freelance Available</h4> <span class="lm-info-block-value"></span>
                                                 <span class="lm-info-block-text"></span>
                                             </div>
@@ -613,7 +450,7 @@
                                             <h3>How Can I Help You?</h3>
                                         </div>
                                         <form id="contact_form" class="contact-form"
-                                            action="https://lmpixels.com/demo/kerge-html/animated/version-2/contact_form/contact_form.php"
+                                            action="{% url 'sendMail' %}"
                                             method="post">
                                             <div class="messages"></div>
                                             <div class="controls two-columns">
@@ -676,11 +513,11 @@
     <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-    <!-- <script src='../../../../../www.google.com/recaptcha/api.js'></script> -->
-    <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
-    <script src="{% static 'js/jquery.googlemap.js' %}"></script>
+    
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
+    <!-- <script src="{% static 'js/jquery.googlemap.js' %}"></script> -->
     <script src="{% static 'js/main.js' %}"></script>
+
     <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
         integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="

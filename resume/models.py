@@ -100,7 +100,18 @@ class Skill(models.Model):
 class Resume(models.Model):
     resume = models.FileField(upload_to='files')
 
+
+class PortFolioTab(models.Model):
+    heading = models.CharField(max_length=50)
+
+    def get_link_identifier(self):
+        return str(self.heading).replace(' ', '_')
+
+    def __str__(self) -> str:
+        return self.heading
+
 class PortFolio(models.Model):
+    tab = models.ForeignKey(PortFolioTab, on_delete=models.CASCADE, related_name='folios')
     name = models.CharField(max_length=100)
     icon = models.CharField(max_length=50 ,default='lnr lnr-smile')
     image = models.ImageField(upload_to='images')

@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import Home, WhatIDo, AboutMe, Testimonial, Client, FunFact, Education, Experience, Skill, SkillCategory, Resume, PortFolio, Blog, Contact, socialLink
+from .models import Home, WhatIDo, AboutMe, Testimonial, Client, FunFact, Education, Experience, Skill, SkillCategory, Resume, PortFolioTab, PortFolio, Blog, Contact, socialLink
+from django.http import JsonResponse
+from django.core.mail import send_mail
 # Create your views here.
 def index(request):
     home = Home.objects.last()
@@ -13,6 +15,7 @@ def index(request):
     skillCategory = SkillCategory.objects.all()
     skill = Skill.objects.all()
     resume = Resume.objects.last()
+    portFolioTab = PortFolioTab.objects.all()
     portFolio = PortFolio.objects.all()
     blog = Blog.objects.all()
     contact = Contact.objects.last()
@@ -31,9 +34,21 @@ def index(request):
         'skill': skill,
         'resume': resume,
         'portFolio': portFolio,
+        'portFolioTab': portFolioTab,
         'blog': blog,
         'contact': contact,
         'sociallink': sociallink
     }
 
     return render(request, 'index.html', context)
+
+
+def sendMail(request):
+    send_mail(
+        'Subject here',
+        'Here is the message.',
+        'masoodazhar60@gmail.com',
+        ['intel3xcel@gmail.com'],
+        fail_silently=False,
+    )
+    return JsonResponse({'type': 'success', 'message': 'Mail has been send!'})
